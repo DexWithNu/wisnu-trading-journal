@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wisnu Trading Journal</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>📈 Wisnu Trading Journal</h1>
+
+<div class="dashboard">
+
+<div class="card">
+<h2>Balance</h2>
+<p id="balance">$5000</p>
+</div>
+
+<div class="card">
+<h2>Total PnL</h2>
+<p id="totalPnl">$0</p>
+</div>
+
+</div>
+
+<div class="form-box">
+
+<h2>Add Trade</h2>
+
+<form id="tradeForm">
+
+<input type="text"
+id="pair"
+placeholder="XAUUSD"
+required>
+
+<select id="direction">
+<option value="LONG">LONG</option>
+<option value="SHORT">SHORT</option>
+</select>
+
+<input type="text"
+id="timeframe"
+placeholder="M1 / M3 / M5">
+
+<input type="text"
+id="session"
+placeholder="Asia / London / NY">
+
+<input type="number"
+id="pnl"
+placeholder="Profit / Loss">
+
+<input type="number"
+id="balanceBefore"
+placeholder="Balance Before">
+
+<input type="number"
+id="balanceAfter"
+placeholder="Balance After">
+
+<textarea
+id="reason"
+placeholder="Reason Entry">
+</textarea>
+
+<button type="submit">
+Save Trade
+</button>
+
+</form>
+
+</div>
+
+<h2>Trading History</h2>
+
+<div id="tradeList"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
