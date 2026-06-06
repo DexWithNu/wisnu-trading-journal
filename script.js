@@ -1,11 +1,13 @@
+const { createClient } = supabase;
+
 const SUPABASE_URL =
 "https://wjlcomwjeqvczywazzcl.supabase.co";
 
 const SUPABASE_KEY =
 "sb_publishable_vuafOjr1hweFZLOZ-Zpjeg_JPSddTqG";
 
-const supabase =
-window.supabase.createClient(
+const supabaseClient =
+createClient(
 SUPABASE_URL,
 SUPABASE_KEY
 );
@@ -46,9 +48,9 @@ const reason =
 document.getElementById("reason").value;
 
 const { error } =
-await supabase
+await supabaseClient
 .from("trades")
-.insert([{
+.insert([
 pair,
 direction,
 timeframe,
